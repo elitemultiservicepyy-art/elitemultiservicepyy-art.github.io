@@ -316,7 +316,7 @@ function tile(p, big){
   const cls = TILES[p.cat] || "t-a";
   const badge = p.agotado ? `<span class="badge out">Agotado</span>` : p.oferta ? `<span class="badge">Oferta</span>` : "";
   const inner = p.foto
-    ? `<img src="${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'mono',textContent:${esc(JSON.stringify(p.marca||'Elite'))}}))">`
+    ? `<img src="${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'mono',textContent:${esc(JSON.stringify(p.marca||'Elite'))}}))">`
     : `<span class="mono">${esc(p.marca || "Elite")}</span><span class="cat">${esc(p.cat)}</span>`;
   return `<div class="ph ${p.foto?"":cls}">${inner}${badge}</div>`;
 }
