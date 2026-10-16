@@ -321,6 +321,7 @@ function tile(p, big){
   return `<div class="ph ${p.foto?"":cls}">${inner}${badge}</div>`;
 }
 function priceHTML(p){
+  if(!p.precioFinal) return `<div class="price"><strong>Precio a consultar</strong></div><div class="cuotas"></div>`;
   return `<div class="price ${p.oferta?"sale":""}"><strong>${gs(p.precioFinal)}</strong>${p.oferta?`<s>${gs(p.precio)}</s>`:""}</div>
     <div class="cuotas">${p.cuotas&&p.cuota?`o ${p.cuotas} cuotas de ${gs(p.cuota)}`:""}</div>`;
 }
